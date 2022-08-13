@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Login from './componentes/Login';
+import Register from './componentes/Register';
+import Sintomas from "./componentes/Sintomas"
+import Noticias from "./componentes/Noticias"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CrearNotcias from './componentes/CrearNotcias';
 
 function App() {
+
+  const [step, setStep] = useState(1)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      {step === 1 && <Login setStep={setStep} />}
+      {step === 2 && <Register setStep={setStep} />}
+      {step === 3 && <Sintomas setStep={setStep} />}
+      {step === 4 && <Noticias setStep={setStep} />}
+      {step === 5 && <CrearNotcias setStep={setStep} />}
+
     </div>
   );
 }
