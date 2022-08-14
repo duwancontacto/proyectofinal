@@ -16,7 +16,7 @@ export default function Login({setStep}) {
     let user = localStorage.getItem("user");
 
     if (user) setStep(3);
-  }, []);
+  }, []); //eslint-disable-line
 
   const handleSubmit = async () => {
     try {

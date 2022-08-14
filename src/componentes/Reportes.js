@@ -33,7 +33,7 @@ export default function CrearNotcias({setStep}) {
 
   const getPersonasConUnaEnfermedad = (users) => {
     let userCounter = 0;
-
+    //eslint-disable-next-line
     users.map((user) => {
       if (
         user?.dolorCabeza === "1" ||
@@ -51,7 +51,7 @@ export default function CrearNotcias({setStep}) {
 
   const getPersonasSintomas = (users) => {
     let userCounter = [0, 0, 0, 0, 0, 0];
-
+    //eslint-disable-next-line
     users.map((user) => {
       if (user?.dolorCabeza === "1") userCounter[0] += 1;
       if (user?.doloresMusculares === "1") userCounter[1] += 1;

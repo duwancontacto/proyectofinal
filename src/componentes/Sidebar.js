@@ -8,6 +8,7 @@ export default function Sidebar({setStep}) {
     if (!user) setStep(1);
 
     setUser(JSON.parse(user));
+    //eslint-disable-next-line
   }, []);
 
   const handleClickLogout = () => {
