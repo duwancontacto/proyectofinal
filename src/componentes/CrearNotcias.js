@@ -1,64 +1,125 @@
-import React, { useState } from 'react'
-import Sidebar from './Sidebar'
-import Modal from "./Modal"
-import iconAgregar from "../images/iconAgregar.png"
+import React, {useState, useEffect} from "react";
+import Sidebar from "./Sidebar";
+import Modal from "./Modal";
+import iconAgregar from "../images/iconAgregar.png";
+import {ToastContainer, toast} from "react-toastify";
+import iconVerMas from "../images/IconVerMas.png";
+import {
+  createNotice,
+  deleteNotice,
+  getNotices,
+  updateNotice,
+} from "../services/Notices";
 
+export default function CrearNotcias({setStep}) {
+  const [show, setShow] = useState(false);
+  const [reload, setReload] = useState(true);
+  const [form, setForm] = useState({title: "", description: ""});
 
-import iconVerMas from "../images/IconVerMas.png"
+  const handleSubmitNotice = async () => {
+    if (show === "edit") await updateNotice(form);
+    else await createNotice(form);
+    setReload(true);
+    setShow(false);
+  };
 
-export default function CrearNotcias({ setStep }) {
-    const [show, setShow] = useState(false);
+  const [noticias, setNoticias] = useState([]);
 
-    const noticia = [
+  useEffect(() => {
+    if (reload) {
+      setReload(false);
+      getNotices()
+        .then((result) => setNoticias(result.data))
+        .catch((error) => console.log("notices", error));
+    }
+  }, [reload]);
 
-        { title: "Cambios en el Cuerpo humano", fecha: "21/2022", icon: iconVerMas },
-        { title: "Avances de las vacuna covid", fecha: "20/2022", icon: iconVerMas },
-        { title: "Aumento de los contagios de viruela", fecha: "09/2022", icon: iconVerMas },
-        { title: "Estudio de las vacunas contra la gripe", fecha: "08/2022", icon: iconVerMas },
-        { title: "La nueva vacuna contra el VIH ", fecha: "08/2022", icon: iconVerMas },
-        { title: "El avance de los estudio de la hemorroides", fecha: "09/2022", icon: iconVerMas },
-        { title: "Estudio de los estados de animos", fecha: "09/2022", icon: iconVerMas },
-    ]
-    return (
-        <div className='containerDasboard'>
-            <Sidebar setStep={setStep} />
-            <div className='Sintomas'>
-                <h4 className='Content-Title'>Crear Noticias</h4>
-                <div className='contenCrearNoticias'>
-                    {noticia.map(element => (
+  const handleDeleteNotice = async (noticeId) => {
+    try {
+      await deleteNotice(noticeId);
+      toast.success("Noticia eliminada");
+      setReload(true);
+    } catch (error) {
+      toast.error(error?.response?.data?.message || "Error");
+    }
+  };
 
-                        <div className='containerTitulo'>
-                            <label>{element.title}</label>
-                            <div className='containerImagen'>
-                                <p>{element.fecha}</p>
-                                <img src={element.icon} alt="iconEditar" className='iconEditar' onClick={() => { setShow(true) }} />
-                            </div>
-                        </div>
-
-
-                    ))}
-
-                </div>
-
-                <div className='contentBotonAgregar' onClick={() => { setShow(true) }}>
-                    <button>Agregar<img src={iconAgregar} alt="iconAgregar" className='iconAgregar' /></button>
-
-                </div>
-
-                <Modal show={show} setShow={setShow} title={"Editar Noticia"} >
-                    <div className='containerModal'>
-                        <label>Titulo</label>
-                        <div> <input type="text" /></div>
-                        <label>Descripcion</label>
-                        <div>
-                            <textarea type="textarea" rows="5" cols="60" />
-                        </div>
-                    </div>
-
-
-
-                </Modal>
+  return (
+    <div className="containerDasboard">
+      <Sidebar setStep={setStep} />
+      <ToastContainer />
+      <div className="Sintomas">
+        <h4 className="Content-Title">Crear Noticias</h4>
+        <div className="contenCrearNoticias">
+          {noticias.map((element) => (
+            <div className="containerTitulo">
+              <label>{element.title}</label>
+              <div className="containerImagen">
+                <p>{new Date(element.created_at).toLocaleDateString()}</p>
+                <button
+                  onClick={() => handleDeleteNotice(element.id)}
+                  className="btn btn-danger mx-4"
+                >
+                  Eliminar
+                </button>
+                <img
+                  onClick={() => {
+                    setShow("edit");
+                    setForm(element);
+                  }}
+                  src={iconVerMas}
+                  alt="iconEditar"
+                  className="iconEditar"
+                />
+              </div>
             </div>
+          ))}
         </div>
-    )
+
+        <div
+          className="contentBotonAgregar"
+          onClick={() => {
+            setShow(true);
+            setForm({title: "", description: ""});
+          }}
+        >
+          <button>
+            Agregar
+            <img src={iconAgregar} alt="iconAgregar" className="iconAgregar" />
+          </button>
+        </div>
+        <Modal
+          show={show}
+          setShow={setShow}
+          title={show === "edit" ? "Editar Noticia" : "Nueva Noticia"}
+          onSubmit={handleSubmitNotice}
+        >
+          <div className="containerModal">
+            <label className="form-label pt-3">Titulo</label>
+            <input
+              className="form-control"
+              name="title"
+              value={form.title}
+              onChange={(e) =>
+                setForm({...form, [e.target.name]: e.target.value})
+              }
+              type="text"
+            />
+            <label className="form-label pt-3">Descripcion</label>
+            <textarea
+              className="form-control"
+              name="description"
+              value={form.description}
+              onChange={(e) =>
+                setForm({...form, [e.target.name]: e.target.value})
+              }
+              type="textarea"
+              rows="5"
+              cols="60"
+            />
+          </div>
+        </Modal>
+      </div>
+    </div>
+  );
 }

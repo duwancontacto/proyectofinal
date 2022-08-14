@@ -1,4 +1,4 @@
-.body{
+.body {
 }
 /* .hijo{
     position: relative;
@@ -10,213 +10,230 @@
     width: 100%;
     height: 100vh;
 } */
-.container-Login{
-    background-image: radial-gradient(circle at 50% -20.71%, #ffff8d 0, #ffea82 16.67%, #eed077 33.33%, #d8b46c 50%, #c09a62 66.67%, #a98359 83.33%, #947051 100%);
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-
-}
-.content-Login{
-width: 40%;
-margin: 0 auto;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
-}
-
-
-.Content-Title{
-    font-size: 50px;
-    color: gray;
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    font-weight: bold;
-    padding-bottom: 20px;
-
+.container-Login {
+  background-image: radial-gradient(
+    circle at 50% -20.71%,
+    #ffff8d 0,
+    #ffea82 16.67%,
+    #eed077 33.33%,
+    #d8b46c 50%,
+    #c09a62 66.67%,
+    #a98359 83.33%,
+    #947051 100%
+  );
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.container-Form label{
-    font-size: 20px;
-    color: #513720;
-    font-weight: bold;
-margin: 10px;
+.cerrarSession {
+  position: absolute;
+  bottom: 0px;
+  margin: 0 auto;
 
-}
-.container-Form input{
-    outline: none;
-    width: 390px;
-    height: 29px;
-margin: 10px;
-border-radius: 4px;
-border: none;
-background: hsla(60, 48%, 95%, 0.668);
-
+  width: 100%;
+  left: 0px;
+  text-align: center;
+  padding-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
 }
 
-.container-Form input::placeholder{
-    color: gray;
-    margin-left: 10px;
-    font-family: 'Times New Roman', Times, serif;
-
+.content-Login {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.botonGeneral{
-    width: 40%;
-    padding: 6px;
-    color: rgb(86, 76, 76);
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-font-size: 18px;
-    border: none;
-    cursor: pointer;
-border-radius: 4px;
-background: hsla(60, 48%, 95%, 0.668);
-margin: 0 auto;
-margin-top: 10px;
 
-
+.Content-Title {
+  font-size: 50px;
+  padding-top: 100px;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  font-weight: bold;
+  padding-bottom: 100px;
 }
-.registro{
-    border-bottom: 2px solid rgba(51, 49, 49, 0.691);
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    cursor: pointer;
+
+.container-Form {
+  width: 100%;
+}
+
+.container-Form label {
+  font-size: 20px;
+  color: #513720;
+  font-weight: bold;
+}
+.container-Form input {
+  padding-left: 10px;
+  outline: none;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: none;
+  background: hsla(60, 48%, 95%, 0.668);
+}
+
+.container-Form input::placeholder {
+  color: gray;
+  margin-left: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+.botonGeneral {
+  width: 100%;
+  padding: 6px;
+  height: 45px;
+  color: rgb(86, 76, 76);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background: hsla(60, 48%, 95%, 0.668);
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.registro {
+  padding-top: 20px;
+  border-bottom: 2px solid rgba(51, 49, 49, 0.691);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* css del componente register */
 
-.flecha{
-    position: absolute;
-    width: 30px;
-    z-index: 99;
-    left: 250px;
-    top: 49px;
-    cursor: pointer;
+.flecha {
+  position: absolute;
+  width: 30px;
+  z-index: 99;
+  left: 250px;
+  top: 49px;
+  cursor: pointer;
+}
+.containerForm-Register {
+  width: 100%;
+}
+.containerForm-Register label {
+  color: #513720;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
 }
 
-.containerForm-Register input{
-    width: 290px;
-    height: 20px;
-    outline: none;
-border-radius: 2px;
-border: none;
-padding: 3px;
-margin:3px;
-background: hsla(60, 48%, 95%, 0.668);
-}
-
-
-.containerForm-Register label{
-    color: #513720;
-    font-size: 17px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    
-}
-.containerForm-Register input::placeholder{
-    color: gray;
-    margin-left: 10px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-
-
-.containerDasboard{
-    background-image: radial-gradient(circle at 56.16% 120.44%, #f1d479 0, #e5c472 25%, #d8b46c 50%, #caa466 75%, #bc9660 100%);
-    background-image: radial-gradient(circle at 50% -20.71%, #ffff8d 0, #ffea82 16.67%, #eed077 33.33%, #d8b46c 50%, #c09a62 66.67%, #a98359 83.33%, #947051 100%);
-    width: 100%;
-    height: 100vh;
-    display: flex;
+.containerDasboard {
+  background-image: radial-gradient(
+    circle at 56.16% 120.44%,
+    #f1d479 0,
+    #e5c472 25%,
+    #d8b46c 50%,
+    #caa466 75%,
+    #bc9660 100%
+  );
+  background-image: radial-gradient(
+    circle at 50% -20.71%,
+    #ffff8d 0,
+    #ffea82 16.67%,
+    #eed077 33.33%,
+    #d8b46c 50%,
+    #c09a62 66.67%,
+    #a98359 83.33%,
+    #947051 100%
+  );
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
 }
 
 /* css del componente dasboard */
 
-.sidebar{
-    width: 200px;
- /*   background: hsla(37, 49%, 60%, 0.434); */
-   background:  hsla(35, 41%, 56%, 0.543);
-   box-shadow: 0px 0px 5px 1px black;
-    
+.sidebar {
+  width: 300px;
+  position: relative;
+  background: hsla(35, 41%, 56%, 0.543);
+  box-shadow: 0px 0px 5px 1px black;
+  padding: 10px;
 }
-.tituloBarraLateral{
-    text-align: center;
-    color: hsla(28, 43%, 22%, 0.529);
-    margin-top: 15px;
-    margin-bottom: 19px;
-    font-family: 'Times New Roman', Times, serif;
-font-size: 20px;
-
+.tituloBarraLateral {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding-top: 30px;
+  font-weight: 800;
 }
-.ButtonSidebar{
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
- text-align: center;
- color: #dee2e6;
- font-weight: bold;
- cursor: pointer;
- border-bottom: 1px solid #dee2e6;
- border-top: 1px solid #dee2e6;
- padding: 10px;
- margin: 0;
-
+.ButtonSidebar {
+  font-size: 20px;
+  text-align: left;
+  padding: 10px 0 10px 10px;
+  color: #e0e0e0;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
 }
 
+.Sintomas {
+  width: calc(100vw - 200px);
+  display: flex;
+  flex-direction: column;
 
-.Sintomas{
-    width: calc(100vw - 200px);
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-position: relative;
-z-index: 10;
-
-   
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
-.contentSintomas{
-/* box-shadow: 0px 0px 5px 1px black; */
-display: flex;
-flex-direction: column;
-justify-content: center;
 
-
+.form-label-custom {
+  font-size: 20px;
+  padding-top: 20px;
 }
-.contentSintomas label{
-    font-size: 24px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
+.form-label-custom-check {
+  font-size: 20px;
+  padding-left: 5px;
 }
-.inputSintomas  input {
-    outline: none;
-    border: none;
-background: hsla(60, 48%, 95%, 0.668);
-width: 490px;
-height: 22px;
-margin-bottom: 20px;
+.contentSintomas {
+  /* box-shadow: 0px 0px 5px 1px black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contentSintomas label {
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+.inputSintomas input {
+  outline: none;
+  border: none;
+  background: hsla(60, 48%, 95%, 0.668);
+  width: 490px;
+  height: 22px;
+  margin-bottom: 20px;
 
-margin-top: 5px;
-
+  margin-top: 5px;
 }
 .contentCheckbox {
-    font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 5px;
-    margin-bottom: 20px;
-
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
-.contentTextarea textarea{
-background: hsla(60, 48%, 95%, 0.668);
-outline: none;
-border: none;
-margin-top: 5px;
-
+.contentTextarea textarea {
+  background: hsla(60, 48%, 95%, 0.668);
+  outline: none;
+  border: none;
+  margin-top: 5px;
 }
 /* .buttonDasboard{
 background: hsla(60, 48%, 95%, 0.668);
@@ -235,148 +252,163 @@ background: hsla(60, 48%, 95%, 0.668);
  */
 /* css del modal */
 .tituloModal {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 27px;
-    text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 27px;
+  text-align: center;
 }
 
 /* css  crear noticas */
 
-.contenCrearNoticias{
-width: 500px;
+.contenCrearNoticias {
+  width: 500px;
 }
-.containerTitulo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-margin: 10px;
-border: 1px solid gray;
-box-shadow: 0px 0px 5px 1px black;
-background: rgb(252, 249, 249)
-
+.containerTitulo {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 5px 1px black;
+  background: rgb(252, 249, 249);
 }
-.containerTitulo label{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 10px;
+.containerTitulo label {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 10px;
 }
-.containerImagen{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.containerImagen {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.containerImagen img{
-    width: 25px;
-    height: 25px;
-    margin-right: 6px;
-    cursor: pointer;
+.containerImagen img {
+  width: 25px;
+  height: 25px;
+  margin-right: 6px;
+  cursor: pointer;
 }
-.containerImagen p{
-    margin: 0 auto;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 18px;
-    margin-right: 20px;
-}
-
-.contentBotonAgregar{
-    position: absolute;
-    z-index: 99;
-    top: 30px;
-    right: 37px;
-    display: flex;
-    cursor: pointer;
-    box-shadow: 2px 2px 2px black;
+.containerImagen p {
+  margin: 0 auto;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 20px;
 }
 
-
-.contentBotonAgregar button{
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    padding: 10px;
-    cursor: pointer;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 500;
-    font-size: 18px;
-
+.contentBotonAgregar {
+  position: absolute;
+  z-index: 99;
+  top: 30px;
+  right: 37px;
+  display: flex;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px black;
 }
-.contentBotonAgregar img{
-    width: 29px;
-    cursor: pointer;
-    padding-left: 4px;
 
+.contentBotonAgregar button {
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+.contentBotonAgregar img {
+  width: 29px;
+  cursor: pointer;
+  padding-left: 4px;
 }
 
 /* css del modal crear notocias */
-.containerModal label{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 20px;
+.containerModal label {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 20px;
 }
-.containerModal input{
-    outline: none;
-    width: 400px;
+.containerModal input {
+  outline: none;
+  width: 100%;
 }
-.containerModal textarea{
-    outline: none;
+.containerModal textarea {
+  outline: none;
 }
 .containerModal p {
-    font-family: 'Times New Roman', Times, serif;
-font-size: 20px;
-line-height: 20px;
+  font-size: 25px;
+  border: 1px solid red;
+  line-height: 20px;
 }
-.containerModal h4{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 22px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    text-align: center;
+.containerModal h4 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
 
+.containerModalNotice {
+  font-size: 20px;
+  text-align: center;
+}
+.containerModalNotice p {
+  font-size: 20px;
 }
 
 /* css de Noticias */
-.ContainerNoticias{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 10px;
-    width: 98%;
-    overflow: auto;
-    
+.ContainerNoticias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px;
+  width: 98%;
+  overflow: auto;
 }
-.contentNoticias{
-    border: 1px solid gray;
-    margin: 9px;
-    box-shadow: 0px 0px 5px 1px black;
-background: rgb(252, 249, 249);
-display: flex;
-flex-direction: column;
-padding: 18px;
-justify-content: center;
-    
+.contentNoticias {
+  cursor: pointer;
+  margin: 9px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  background: rgb(252, 249, 249);
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  justify-content: center;
 }
-.contentNoticias h5{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 18px;
-    color: rgb(77, 67, 67);
-    text-align: center;
-    padding: 2px;
-
+.contentNoticias h5 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 25px;
+  padding-top: 20px;
+  color: rgb(77, 67, 67);
+  text-align: center;
 }
 .contentNoticias img {
-   width: 50px;
-   margin: 0 auto;
-   cursor: pointer;
-
+  width: 100px;
+  margin: 0 auto;
+  cursor: pointer;
 }
-.containerModal p{
-    margin: 0 auto;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
-    margin-right: 20px;
+.containerModal p {
+  margin: 0 auto;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.data-user {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 20px;
+}
+.data-user h5 {
+  margin: 0px;
+}
+.data-user span {
+  padding-left: 10px;
 }
